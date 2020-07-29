@@ -1,0 +1,49 @@
+body{
+	background: url("https://wallpapercave.com/wp/wp1966328.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	color: white;
+}
+#head{
+	text-align: center;
+	margin-top: 3%;
+}
+#brief{
+
+	text-align: justify;
+}
+.stro{
+	font-weight: bold;
+}
+.yes{
+	background:url("https://image.freepik.com/free-photo/school-office-supplies_87742-5392.jpg");
+	background-position: center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	height: 11.4rem;
+	border-radius: 10px;
+}
+.pass{
+	padding-top: 1rem;
+	padding-left: 12rem;
+}
+.seven{
+	padding-left: 12rem;
+}
+.but{
+	margin-left: 12.8rem;
+	color: white;
+}
+@media (max-width: 991.98px) {
+	.pass{
+		padding-top: 0.5rem;
+		padding-left: 6rem;
+	}
+	.seven{
+	padding-left: 6rem;
+}
+.but{
+	margin-left: 6.8rem;
+}
+}
