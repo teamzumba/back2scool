@@ -1,11 +1,195 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>B2S</title>
+    <link rel="stylesheet" href="CSS/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet">
+
+    <style>
+        /* CSS reset */
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: url('bg5.jpg');
+            /* background-color:rgb(231, 183, 243); */
+            background-repeat: no-repeat;
+            background-size: cover;
+            /* color: white; */
+            font-family: 'Baloo Bhaina 2', cursive;
+
+        }
+        /* img{
+          opacity: 0.5;
+        } */
+
+        .left {
+            /* border: 2px solid red; */
+            display: inline-block;
+            position: absolute;
+            left: 60px;
+            top: 20px;
+        }
+
+        .left img {
+            width: 99px;
+            /* filter: invert(100%); */
+        }
+        .right img {
+            width: 298px;
+            height: 57px;
+            /* filter: invert(100%); */
+        }
+
+        .left div {
+            text-align: center;
+            line-height: 6px;
+            font-size: 30px;
+        }
+
+        .mid {
+            /* border: 2px solid yellow; */
+            display: block;
+            width: 53%;
+            margin: 30px auto;
+        }
+
+        .right {
+            position: absolute;
+            right: 30px;
+            top: 45px;
+            display: inline-block;
+            /* border: 2px solid greenyellow; */
+        }
+
+        .navbar {
+            display: inline-block;
+        }
+
+        .navbar li {
+            display: inline-block;
+            font-size: 25px;
+        }
+
+        .navbar li a {
+            color: white;
+            text-decoration: none;
+            padding: 30px 20px;
+        }
+
+        .navbar li a:hover,
+        .navbar li a.active {
+            color: rgb(212, 207, 207);
+            text-decoration: underline;
+
+        }
+
+        .btn {
+            margin: 0px 208px;
+            background-color: black;
+            color: white;
+            padding: 0px 14px;
+            border: 2px solid grey;
+            border-radius: 25px;
+            font-size: 20px;
+            cursor: pointer;
+            font-family: 'Baloo Bhaina 2', cursive;
+
+        }
+       
+
+        .btn:hover {
+            background-color: rgb(39, 37, 37);
+        }
+
+        .container {
+            height: 444px; 
+            width: 89%;
+            /* border: 2px solid black; */
+            display: flex;
+            /* /* font-size: 30px; */
+            margin: 100px 10px;
+            /* padding: 70px; */ 
+            border-radius: 15px;
+            justify-content: space-evenly;
+            flex-direction: column;
+            flex-wrap: wrap;
+        }
+        .formgrp input{
+            font-family: 'Baloo Bhaina 2', cursive;
+            text-align: center;
+            display: block;
+            width: 388px;
+            margin: 11px auto;
+            padding: 0px;
+            border: 2px solid black;
+            font-size: 26px;
+            border-radius: 10px;
+        }
+        .item{
+            width: 40%;
+            height: 90%;
+            /* background-color: tomato; */
+            /* border:solid 2px green; */
+            margin: 10px;
+            padding: 3px;
+            
+        }
+        #item1{
+            text-align: center;
+        }
+        #item2{
+            text-align: center;
+            font-size: 81px;
+            line-height: 106px;
+            background: url('sss.jpg');
+            border-radius: 30px;
+        }
+        .container button{
+            display: block;
+            width: 50%;
+            margin: 30px auto;
+        }
+    </style>
 </head>
+
 <body>
-    <h1>Spellbee</h1>
+    <header class="header">
+        <!-- left box for B2S logo -->
+        <div class="left">
+            <a href="to home page"> <img src="B2S_Logo.png" alt="2BS"  ></a>
+            <!-- <div>BACK-2-SCHOOL</div> -->
+        </div>
+        <!-- mid for navbar -->
+        <div class="mid">
+            <ul class="navbar">
+                <li><a href="#" >Spell-Bee</a> </li>
+                <li><a href="#" class="active">Math-Bee</a> </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a> </li>
+            </ul>
+        </div>
+        <!-- right for gravitas logo -->
+        <div class="right">
+           <img src="graVITas20 Logo.png" alt="graVITas20">
+        </div>
+    </header>
+    <div class="container">
+        <div class="item" id="item1">
+            <div>
+            Lorem, ipsum dolor <br> sit amet consectetur adipisicing elit. Ab cupiditate voluptate modi recusandae aspernatur. Explicabo dolorem sunt assumenda amet accusantium placeat numquam est provident dolorum ex! Iusto impedit alias quod ut atque nesciunt ducimus labore!</div>
+        </div>
+        <div class="item" id="item2">
+            <div>
+            SPELL-BEE<br> CLASS 3-12
+            </div>
+            <button class="btn" >CLICK HERE</button>
+        </div>
+        
+        
+    </div>
 </body>
+
 </html>
