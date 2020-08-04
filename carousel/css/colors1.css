@@ -71,7 +71,7 @@ footer h2::after,
 }
 
 .tp-caption.tp-shape.tp-shapewrapper.tp-resizeme.rs-parallaxlevel-0 {
-    background: #039ee3 !important;
+    background: none !important;
 }
 
 a.btn.main_bt,
@@ -182,9 +182,9 @@ button.btn.white_btn, a.btn.white_btn, button.btn.white_btn, a.btn.white_btn {
 	text-shadow: none;
 }
 
-button.btn.white_btn:hover, 
-a.btn.white_btn:hover, 
-button.btn.white_btn:hover, 
+button.btn.white_btn:hover,
+a.btn.white_btn:hover,
+button.btn.white_btn:hover,
 a.btn.white_btn:hover {
 	color: #fff;
 	text-transform: none;
@@ -192,10 +192,9 @@ a.btn.white_btn:hover {
 }
 
 .tp-bannertimer {
-    background: #039ee3 !important;
+    background: none !important;
 }
 
 .tp-caption.tp-shape.tp-shapewrapper.rs-parallaxlevel-0 {
 	background-color: rgba(0, 0, 0, 0.4) !important;
 }
-
