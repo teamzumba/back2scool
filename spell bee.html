@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Spell Bee</title>
+    <link rel="stylesheet" href="spell bee.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="laptop">
+            <ul class="nav-links">
+                <li>
+                    <img src="public/B2S_Logo.png" class="b2s-logo" />
+                </li>
+              <li><a href="#">Spell-Bee</a> </li>
+                <li><a href="#">Math-Bee</a> </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a> </li>
+                <li>
+                    <img src="public/graVITas20 Logo.png" class="gra-logo" />
+                </li>
+            </ul>
+          </div>
+          <div class="mobile">
+            <div class="mobile-nav">
+              <div id="mobile-gra-logo">
+                  <img src="public/graVITas20 Logo.png" class="gra-logo" />
+                
+              </div>
+              <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+           </div>
+            <div class="menu hidden" id="menu">
+              <ul class="menu-links" id="menu-links">
+                <hr style="margin: -10px 0 0 0;">
+                <li><a href="#">Spell-Bee</a> </li><hr>
+                <li><a href="#">Math-Bee</a> </li><hr>
+                <li><a href="#">About Us</a></li><hr>
+                <li><a href="#">Contact Us</a> </li><hr></ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+<h1>SPELL-BEE</h1>
+ <div class="container">
+     
+     <div class="c c1">
+         <p>CATEGORY 1</p>
+         <button class="btn btn1">CLASS 3-5</button>
+     </div>
+     <div class="c c2">
+        <p>CATEGORY 2</p>
+        <button class="btn btn2">CLASS 6-8</button>
+    </div>
+    <div class="c c3">
+        <p>CATEGORY 3</p>
+        <button class="btn btn3">CLASS 9-10</button>
+    </div>
+    
+    
+</div>
+
+    <script>
+        var burger = document.getElementById("burger");
+var menu = document.getElementById("menu");
+var mobileAdgLogo = document.getElementById("mobile-adg-logo");
+
+burger.addEventListener("click", () => {
+  $("#menu").slideToggle("medium");
+  menu.classList.toggle("hidden");
+ 
+  burger.classList.toggle('toggle');
+});
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>

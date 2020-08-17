@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="login page.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
+    <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav>
+        <div class="navbar">
+          <div class="laptop">
+            <ul class="nav-links">
+                <li>
+                    <img src="public/B2S_Logo.png" class="b2s-logo" />
+                </li>
+              <li><a href="#">Spell-Bee</a> </li>
+                <li><a href="#">Math-Bee</a> </li>
+                <li><a href="#">About Us</a></li>
+                <li><a href="#">Contact Us</a> </li>
+                <li>
+                    <img src="public/graVITas20 Logo.png" class="gra-logo" />
+                </li>
+            </ul>
+          </div>
+          <div class="mobile">
+            <div class="mobile-nav">
+              <div id="mobile-gra-logo">
+                  <img src="public/graVITas20 Logo.png" class="gra-logo" />
+                
+              </div>
+              <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+           </div>
+            <div class="menu hidden" id="menu">
+              <ul class="menu-links" id="menu-links">
+                <hr style="margin: -10px 0 0 0;">
+                <li><a href="#">Spell-Bee</a> </li><hr>
+                <li><a href="#">Math-Bee</a> </li><hr>
+                <li><a href="#">About Us</a></li><hr>
+                <li><a href="#">Contact Us</a> </li><hr></ul>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+ <div class="container">
+    <div class="container3">
+        <img src="public/B2S_Logo.png" alt="2BS" class="img2">
+    </div>
+    <div class="container1">
+        <div class="login-box">
+            <form >
+            <div class="textbox">
+              <i class="fas fa-user"></i>
+              <input type="text" placeholder="Username" required>
+            </div>
+            <div class="textbox">
+              <i class="fas fa-lock"></i>
+              <input type="password" placeholder="Password"required>
+            </div>
+            <div class="selectbox">
+            <select name="test" id="test" required>
+                <option>Select your test</option>
+                <option value="math-bee">Math-Bee</option>
+                <option value="spell-bee">Spell-Bee</option>
+            </select>
+            </div>
+            <input type="submit" class="btn" value="Login">
+            </form>
+        </div>
+        
+    </div>
+    <div class="container2">
+        <img src="public/B2S_Logo.png" alt="2BS" class="img1">
+    </div>
+</div>
+
+    <script>
+        var burger = document.getElementById("burger");
+var menu = document.getElementById("menu");
+var mobileAdgLogo = document.getElementById("mobile-adg-logo");
+
+burger.addEventListener("click", () => {
+  $("#menu").slideToggle("medium");
+  menu.classList.toggle("hidden");
+ 
+  burger.classList.toggle('toggle');
+});
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+</body>
+
+</html>
