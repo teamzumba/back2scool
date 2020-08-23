@@ -1,0 +1,63 @@
+
+.yes{
+	padding-left: 13rem;
+	font-size: 20px;
+}
+.inst{
+	font-family: 'Fredericka the Great', cursive;
+	font-size: 90px;
+}
+.navbar{
+	width: 100%;
+	padding-left: 0;
+}
+.container-fluid{
+	padding-left: 0;
+	padding-right: 0;
+}
+.container-fluid-hmmm{
+	background-image: url(/instructions.png);
+}
+.gravitaslo{
+	width: 10rems;
+	margin-right: 1rem;
+}
+.checking{
+	font-weight: bold;
+}
+.logo{
+	width: 4.5rem;
+	margin-left: 2rem;
+}
+@media (max-width: 1110px) {
+	body{
+		overflow-x: hidden;
+	}
+	.no{
+		font-size: 2.5rem;
+	}
+	.yes{
+		padding-left: 1rem;
+		font-size: 1rem;
+	}
+	.gravitaslo{
+		width: 8rem;
+		margin-left: 0rem;
+		margin-right: 0rem;
+	}
+	.logo{
+		width: 3rem;
+		margin-left: 0.8rem;
+	}
+}
+p { margin-top: -10px; }
+.firstp{
+	font-size: 27px;
+	font-weight: bold;
+}
+.plast{
+	padding-left: 16px;
+}
+.btn-danger{
+	margin-left: 15px;
+}

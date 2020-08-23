@@ -1,0 +1,251 @@
+@import url("https://fonts.googleapis.com/css?family=Roboto:100,300,400,700,900&display=swap");
+body {
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+    width: 100%;
+    background: url(/MathBee.png);
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: white;
+    font-family: 'Baloo Bhaina 2', cursive;
+    
+
+}
+
+
+h1{
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 80px;
+    position: absolute;
+    right: 15%;
+    top: 20%;
+    color: rgb(250, 226, 91);
+    text-shadow: 4px 4px black;
+}
+.container{
+    position: absolute;
+    width: 50%;
+    bottom: 25%;
+    right: 5%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    text-align: center;
+}
+.c{
+    font-family: fantasy;
+    font-size: 32px;
+    letter-spacing: 0.8px;
+    
+}
+.c1{
+    color: rgb(84, 230, 235);
+    
+}
+.c2{
+    color: rgb(248, 147, 197);
+} 
+.c3{
+    color: rgb(108, 248, 127);
+}
+.btn{
+    padding: 15px;
+    font-size: 18px;
+    border: none;
+    border-radius: 30px;
+    font-weight: bold;
+}
+.btn:hover{
+    color: rgb(75, 74, 74);
+}
+.btn1{
+    background-color: rgb(84, 230, 235);;
+}
+.btn2{
+    background-color: rgb(248, 147, 197);
+}
+.btn3{
+    background-color: rgb(108, 248, 127);
+}
+
+.navbar {
+    width: 100%;
+   }
+  
+  .nav-links {
+    margin: 0 100px;
+    height: 8vh;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    list-style: none;
+  }
+  
+  .nav-links a {
+    padding-top: 20px;
+    font-size: 20px;
+    font-weight: 300;
+    text-decoration: none;
+    color: white;
+    letter-spacing: normal;
+    float: left;
+  }
+  
+  .nav-links a:hover {
+    color: grey;
+    transition: 0.3s;
+  }
+  
+  
+  .mobile {
+    display: none;
+  }
+  .hidden{
+    display: none;
+  }
+  
+  
+  .b2s-logo {
+    padding-top: 55%;
+    width: 75px;
+  }
+  .gra-logo {
+    padding-top: 30px;
+    width: 250px;
+  }
+  
+  
+
+
+@media only screen and (max-width: 1080px) {
+ body{
+   background: rgb(161, 15, 15);
+}
+  .container{
+    position: relative;
+    width: 50%;
+    margin-top: 40px;
+    left: 35%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    text-align: center;
+}
+h1{
+  position: relative;
+  width: 100%;
+  font-size: 65px;
+  left: 22%;
+  margin-top: 50px;
+  text-shadow: 3px 3px black;
+}
+.c{
+  font-size: 28px;
+  padding: 10px;
+  }
+  .btn{
+    padding: 8px;
+    font-size: 15px;
+}
+    .laptop {
+      display: none;
+    }
+    
+    
+  
+    
+    .nav-links{
+      display: none;
+    }
+    .menu {
+        margin-top: 42px;
+      height: 15vh;
+      
+    }
+    hr{
+      margin: 0 50px;
+      border: 0.1px solid darkgray;
+    }
+    .menu-links {
+      margin: 0;
+      padding: 0;
+      height: 40%;
+      font-size: 18px;
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      align-self: left;
+    }
+  
+    .menu-links a {
+      color: white;
+      text-decoration: none;
+      margin: 0 50px;
+    }
+  
+    .menu-links a:hover {
+      color: grey;
+      transition: 0.3s;
+    }
+  
+    .menu-links li {
+      margin: 0;
+      padding: 0;
+      text-align: center;
+    }
+  
+  
+    .gra-logo {
+      width: 150px;
+      padding-top: 15px;
+    }
+
+    #mobile-gra-logo{
+        margin: 0;
+      }
+
+    .burger {
+      cursor: pointer;
+      margin-right: -75px;
+    }
+    .burger div {
+      width: 25px;
+      height: 3px;
+      background-color: white;
+      margin: 5px;
+    }
+  
+    .mobile {
+      display: block;
+    }
+  
+    .mobile-nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 2%;
+      height: 9vh;
+    }
+  }
+  ::-webkit-scrollbar {
+    width: 0px;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: transparent;
+    border-radius: 6px;
+    height: 100px;
+  }
+  .toggle .line1{
+    transform: rotate(-45deg) translate(-5px,6px);
+    transition-duration: 0.5s;
+  }
+  .toggle .line2{
+    opacity: 0;
+    transition-duration: 0.5s;
+  }
+  .toggle .line3{
+    transform: rotate(45deg) translate(-5px,-6px);
+    transition-duration: 0.5s;
+  }
