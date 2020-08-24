@@ -1,0 +1,197 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,300;0,400;1,700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Lato', sans-serif;
+  background-image: url("https://hdwallpaperim.com/wp-content/uploads/2017/08/25/466304-landscape-abstract-red-mountains-Photoshop.jpg");
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.container {
+  width: 940px;
+  background-color: black;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  min-height: 350px;
+  padding: 80px 90px;
+  border-radius: 10px;
+  display: flex;
+  margin: 20px;
+}
+
+.leftSide, .rightSide {
+  width: 50%;
+  margin: 20px;
+}
+
+.leftSide img {
+  height: 250px;
+}
+
+.rightSide h1 {
+  color: #1da3dd;
+  font-size: 32px;
+}
+
+.rightSide h2 {
+  color: white;
+  margin: 20px auto 10px;
+  font-size: 25px;
+}
+
+.rightSide ul {
+  color: white;
+  font-size: 18px;
+  margin-top: 5px;
+  font-weight: 600;
+  list-style-type: circle;
+  list-style-position: inside;
+}
+
+.rightSide ul li {
+  margin-top: 5px;
+}
+
+.rightSide a {
+  background-color: #1da3dd;
+  border-radius: 100px;
+  color: white;
+  width: 100%;
+  display: inline-block;
+  text-align: center;
+  padding: 15px 0;
+  margin-top: 25px;
+  text-decoration: none;
+  outline: none;
+}
+
+/* Question Page */
+
+.box {
+  background-color: black;
+  border-radius: 10px;
+  box-shadow: 0 0 50px 0 rgba(0, 0, 0, 0.2);
+  min-height: 350px;
+  width: 640px;
+  padding: 50px;
+}
+
+.title {
+  border-bottom: 1px solid white;
+  color: white;
+  padding-bottom: 10px;
+  margin-bottom: 30px;
+  font-weight: 600;
+  font-size: 24px;
+}
+
+.header {
+  margin-bottom: 30px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.scoreBox, .timerBox {
+  border-radius: 100px;
+  padding: 10px 15px;
+  border-radius: 1px solid white;
+  color: white;
+}
+
+.questionBox {
+  background-color: #594a76;
+  color: white;
+  border-radius: 10px;
+  padding: 10px 15px;
+  margin: 10px 0;
+}
+
+.optionBox {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  margin-left: 30px 0;
+  grid-gap: 15px;
+  margin: 10px 0;
+}
+
+.optionBox span {
+  background-color: white;
+  border-radius: 10px;
+  color: black;
+  border: 1px solid #444;
+  padding: 10px 15px;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.footer-que {
+  display: inline-block;
+}
+
+.prev {
+  margin: 0 10px;
+}
+
+.resultBox {
+  margin-bottom: 30px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-row-gap: 15px;
+  font-size: 20px;
+}
+
+.resultBox *:nth-child(odd) {
+  text-align: right;
+  color: white;
+}
+
+.resultBox span {
+  font-weight: 600;
+  color: white;
+}
+
+.buttonBox {
+  border-top: 1px solid white;
+  padding-top: 15px;
+  text-align: center;
+}
+
+.optionBox span.right, .optionBox span.wrong {
+  background-color: blue;
+  border-color: blue;
+  color: white;
+}
+
+/* To Make Mobile Responsive */
+
+@media screen and (max-width: 840px) {
+  .container {
+    display: block;
+  }
+  .leftSide {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 10%;
+  }
+  .container,
+  .box {
+    width: 425px;
+  }
+  .rightSide {
+    width: 100%
+  }
+  .optionBox {
+    grid-template-columns: 1fr;
+  }
+}

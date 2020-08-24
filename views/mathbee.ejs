@@ -4,192 +4,97 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>B2S</title>
-    <link rel="stylesheet" href="CSS/style.css">
+    <title>Math Bee</title>
+    <link rel="stylesheet" href="/css/mathbee.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css">
     <link href="https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@600&display=swap" rel="stylesheet">
-
-    <style>
-        /* CSS reset */
-        body {
-            margin: 0px;
-            padding: 0px;
-            background: url('fff.jpg');
-            /* background-color:rgb(231, 183, 243); */
-            background-repeat: no-repeat;
-            background-size: cover;
-            /* color: white; */
-            font-family: 'Baloo Bhaina 2', cursive;
-
-        }
-        /* img{
-          opacity: 0.5;
-        } */
-
-        .left {
-            /* border: 2px solid red; */
-            display: inline-block;
-            position: absolute;
-            left: 60px;
-            top: 20px;
-        }
-
-        .left img {
-            width: 99px;
-            /* filter: invert(100%); */
-        }
-        .right img {
-            width: 298px;
-            height: 57px;
-            /* filter: invert(100%); */
-        }
-
-        .left div {
-            text-align: center;
-            line-height: 6px;
-            font-size: 30px;
-        }
-
-        .mid {
-            /* border: 2px solid yellow; */
-            display: block;
-            width: 53%;
-            margin: 30px auto;
-        }
-
-        .right {
-            position: absolute;
-            right: 30px;
-            top: 45px;
-            display: inline-block;
-            /* border: 2px solid greenyellow; */
-        }
-
-        .navbar {
-            display: inline-block;
-        }
-
-        .navbar li {
-            display: inline-block;
-            font-size: 25px;
-        }
-
-        .navbar li a {
-            color: white;
-            text-decoration: none;
-            padding: 30px 20px;
-        }
-
-        .navbar li a:hover,
-        .navbar li a.active {
-            color: rgb(212, 207, 207);
-            text-decoration: underline;
-
-        }
-
-        .btn {
-            margin: 0px 208px;
-            background-color: black;
-            color: white;
-            padding: 0px 14px;
-            border: 2px solid grey;
-            border-radius: 25px;
-            font-size: 20px;
-            cursor: pointer;
-            font-family: 'Baloo Bhaina 2', cursive;
-
-        }
-       
-
-        .btn:hover {
-            background-color: rgb(39, 37, 37);
-        }
-
-        .container {
-            height: 444px; 
-            width: 89%;
-            /* border: 2px solid black; */
-            display: flex;
-            /* /* font-size: 30px; */
-            margin: 100px 10px;
-            /* padding: 70px; */ 
-            border-radius: 15px;
-            justify-content: space-evenly;
-            flex-direction: column;
-            flex-wrap: wrap;
-        }
-        .formgrp input{
-            font-family: 'Baloo Bhaina 2', cursive;
-            text-align: center;
-            display: block;
-            width: 388px;
-            margin: 11px auto;
-            padding: 0px;
-            border: 2px solid black;
-            font-size: 26px;
-            border-radius: 10px;
-        }
-        .item{
-            width: 40%;
-            height: 90%;
-            /* background-color: tomato; */
-            /* border:solid 2px green; */
-            margin: 10px;
-            padding: 3px;
-            
-        }
-        #item1{
-            text-align: center;
-        }
-        #item2{
-            text-align: center;
-            font-size: 81px;
-            line-height: 106px;
-            background: url('mb.jpg');
-            border-radius: 30px;
-        }
-        .container button{
-            display: block;
-            width: 50%;
-            margin: 30px auto;
-        }
-    </style>
 </head>
 
 <body>
-    <header class="header">
-        <!-- left box for B2S logo -->
-        <div class="left">
-            <a href="to home page"> <img src="B2S_Logo.png" alt="2BS"  ></a>
-            <!-- <div>BACK-2-SCHOOL</div> -->
-        </div>
-        <!-- mid for navbar -->
-        <div class="mid">
-            <ul class="navbar">
-                <li><a href="#" >Spell-Bee</a> </li>
-                <li><a href="#" class="active">Math-Bee</a> </li>
-                <li><a href="#">About Us</a></li>
-                <li><a href="#">Contact Us</a> </li>
+    <nav>
+        <div class="navbar">
+          <div class="laptop">
+            <ul class="nav-links">
+                <li>
+                  <a href="/">
+                  <img src="B2S_Logo.png" class="b2s-logo"   />
+                </a>
+                </li>
+                <li><a href="/login">Login</a></li>
+                <li><a href="/about">About Us</a></li>
+                <li><a  onclick="scroll_contact()" type="button" >Contact Us</a> </li>
+                <li>
+                  <a href="/gravitas">
+                    <img src="graVITas20 Logo.png" class="gra-logo" />
+                  </a>
+                </li>
             </ul>
-        </div>
-        <!-- right for gravitas logo -->
-        <div class="right">
-           <img src="graVITas20 Logo.png" alt="graVITas20">
-        </div>
-    </header>
-    <div class="container">
-        <div class="item" id="item1">
-            <div>
-            Lorem, ipsum dolor <br> sit amet consectetur adipisicing elit. Ab cupiditate voluptate modi recusandae aspernatur. Explicabo dolorem sunt assumenda amet accusantium placeat numquam est provident dolorum ex! Iusto impedit alias quod ut atque nesciunt ducimus labore!</div>
-        </div>
-        <div class="item" id="item2">
-            <div>
-            MATH-BEE <br> CLASS 3-12
+          </div>
+          <div class="mobile">
+            <div class="mobile-nav">
+              <div id="mobile-gra-logo">
+                <a href="/gravitas">
+                  <img src="graVITas20 Logo.png" class="gra-logo" />
+                </a>
+              </div>
+              <div class="burger" id="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+              </div>
+           </div>
+            <div class="menu hidden" id="menu">
+              <ul class="menu-links" id="menu-links">
+                <hr style="margin: -10px 0 0 0;">
+                <li><a href="/login">Login</a></li><hr>
+                <li><a href="/about">About Us</a></li><hr>
+                <li><a onclick="scroll_contact()" type="button">Contact Us</a> </li><hr></ul>
             </div>
-            <button class="btn" >CLICK HERE</button>
+          </div>
         </div>
-        
-        
+      </nav>
+<h1>MATH-BEE</h1>
+ <div class="container">
+     <form action="/quiz" method="POST">
+     <div class="c c1">
+         <p>CATEGORY 1</p>
+         <button type="submit"class="btn btn1">CLASS 3-5</button>
+     </div>
+    </form>
+    <form action="/quiz" method="POST">
+     <div class="c c2">
+        <p>CATEGORY 2</p>
+        <button type="submit" class="btn btn2">CLASS 6-8</button>
     </div>
+  </form>
+  <form action="/quiz" method="POST">
+    <div class="c c3">
+        <p>CATEGORY 3</p>
+        <button type="submit" class="btn btn3">CLASS 9-10</button>
+    </div>
+  </form>
+    
+</div>
+
+
+
+    <script>
+        var burger = document.getElementById("burger");
+var menu = document.getElementById("menu");
+var mobileAdgLogo = document.getElementById("mobile-adg-logo");
+
+burger.addEventListener("click", () => {
+  $("#menu").slideToggle("medium");
+  menu.classList.toggle("hidden");
+ 
+  burger.classList.toggle('toggle');
+});
+var contact=document.getElementById("contact");
+  function scroll_contact()
+  {contact.scrollIntoView({behavior: "smooth"});
+  }
+    </script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 </body>
 
 </html>

@@ -9,58 +9,53 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
     <link rel="stylesheet" href="/css/navbar.css" />
     <title>Back To School</title>
-    <link rel="stylesheet" type="text/css" href="css/gravitas.css">
+    <link rel="stylesheet" type="text/css" href="/css/gravitas.css">
   </head>
   <body>
-
-  <nav>
-  <div class="navbar">
-    <div class="laptop">
-        <ul class="nav-links">
-          <li>
-            <a href="/"> <img  src="B2S_Logo.png" class="b2s-logo" /></a>
-               
-            </li>
-            &emsp;&emsp;&emsp;&emsp;
-          <li><a href="/login">Login</a> </li>
-            <li><a href="/about">About Us</a></li>
-            <li><a class="contactUS" onclick="scroll_contact()" type="button">Contact Us </a> </li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
-            <li>
-              <a href="http://gravitas.ac.in">
-               <img src="graVITas20 Logo.png" class="gra-logo" />
-              </a> 
-            </li>
-        </ul>
-      </div>
-      <div class="mobile">
-        <div class="mobile-nav">
-          <div id="mobile-gra-logo">
-              <img src="graVITas20 Logo.png" class="gra-logo" />
-            
-          </div>
-          <div class="burger" id="burger">
-            <div class="line1"></div>
-            <div class="line2"></div>
-            <div class="line3"></div>
-          </div>
-       </div>
-        <div class="menu hidden" id="menu">
-          <ul class="menu-links" id="menu-links">
-            <hr style="margin: -10px 0 0 0;">
-            <li><a href="/login">Login</a> </li><hr>
-            <li><a href="/about">About Us</a></li><hr>
-            <li><a class="contactUS" onclick="scroll_contact()" type="button">Contact Us</a> </li><hr>
+  
+    <nav>
+      <div class="navbar">
+        <div class="laptop">
+          <ul class="nav-links">
+              <li>
+                  <img src="B2S_Logo.png" class="b2s-logo" />
+              </li>
+              &emsp;&emsp;&emsp;&emsp;
+            <li><a href="#">Login</a> </li>
+              <li><a href="#">About Us</a></li>
+              <li><a href="#">Contact Us</a> </li>&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+              <li>
+                  <img src="graVITas20 Logo.png" class="gra-logo" />
+              </li>
           </ul>
         </div>
+        <div class="mobile">
+          <div class="mobile-nav">
+            <div id="mobile-gra-logo">
+                <img src="graVITas20 Logo.png" class="gra-logo" />
+              
+            </div>
+            <div class="burger" id="burger">
+              <div class="line1"></div>
+              <div class="line2"></div>
+              <div class="line3"></div>
+            </div>
+         </div>
+          <div class="menu hidden" id="menu">
+            <ul class="menu-links" id="menu-links">
+              <hr style="margin: -10px 0 0 0;">
+              <li><a href="/login">Login</a> </li><hr>
+              <li><a href="/about">About Us</a></li><hr>
+              <li><a onclick="scroll_contact()" type="button">Contact Us</a> </li><hr>
+            </ul>
+          </div>
+        </div>
       </div>
-    </div>
-  </nav>
-  <!-- <div> -->
-    <!-- <%- include('navbar'); -%> -->
-<!-- </div>  -->
-  <div class="carousel">
-    <%- include('carousel'); -%>
-</div>
+    </nav>
+    <div>
+      <%- include('carousel'); -%>
+     </div>
+ 
 <div class="container">
 	<h1 id="head"><img class="img-fluid" src="B2S_Logo.png" alt="" style="width: 10rem;"></h1>
 	<p id="brief" class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
@@ -72,7 +67,7 @@
 </div>
 <br>
 <br>
-<div class="container cards">
+<div class="container">
  <div class="row justify-content-between">
    <div class="col-md-6 col-12 mb-md-0 mb-4 ">
      <div class="yes">
@@ -100,6 +95,7 @@
 <div id="contact">
   <%- include('footer'); -%>
 </div>
+
 <script>
   var burger = document.getElementById("burger");
 var menu = document.getElementById("menu");
@@ -117,16 +113,10 @@ burger.classList.toggle('toggle');
   {contact.scrollIntoView({behavior: "smooth"});
   }</script>
 
-
-<script>var contact=document.getElementById("contact");
-  function scroll_contact()
-  {contact.scrollIntoView({behavior: "smooth"});
-  }</script>
-
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    
   </body>
 </html>

@@ -1,0 +1,32 @@
+.Event{
+  font-size: 110px;
+  font-family: 'Bangers', cursive;
+  padding-bottom: 20rem;
+}
+.carousel-inner{
+  height:620px;
+}
+@media (max-width: 400px){
+	.Event{
+		font-size: 2.75rem;
+		padding-bottom: 2.5rem;
+	}
+}
+@media (min-width: 401px) and (max-width: 600px){
+	.Event{
+		font-size: 3.5rem;
+		padding-bottom: 3.5rem;
+	}
+}
+@media (min-width: 601px) and (max-width: 753px){
+	.Event{
+		font-size: 5rem;
+		padding-bottom: 6rem;
+	}
+}
+@media (min-width: 754px) and (max-width: 1200px){
+	.Event{
+		font-size: 6rem;
+		padding-bottom:8.5rem;
+	}
+}
