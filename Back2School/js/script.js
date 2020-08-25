@@ -1,194 +1,221 @@
-var quiz = [
+(function() {
+  var questions = [
     {
         question: "What does HTML stand for?",
-        option: [
+        choices: [
+
             "Hyper Tag Markup Language",
             "Hyper Text Markup Language",
             "Hyperlinks Text Mark Language",
-            "Hyperlinking Text Marking Language",
+            "Hyperlinking Text Marking Language"
         ],
-        answer: 2,
+        correctAnswer: 1,
     },
     {
         question: "What does CSS stand for?",
-        option: [
+        choices: [
             "Computing Style Sheet",
             "Creative Style System",
             "Cascading Style Sheet",
-            "Creative Styling Sheet",
+            "Creative Styling Sheet"
         ],
-        answer: 3,
+        correctAnswer: 2,
     },
     {
         question: "Where should a CSS file be referenced in a HTML file?",
-        option: [
+        choices: [
             "Before any HTML code",
             "After all HTML code",
             "Inside the head section",
-            "Inside the body section",
+            "Inside the body section"
         ],
-        answer: 3,
+        correctAnswer: 2,
     },
     {
         question:
             "What is the correct format for aligning written content to the center of the page in CSS?",
-        option: [
+        choices: [
             "Text-align:center;",
             "Font-align:center;",
             "Text:align-center;",
-            "Font:align-center;",
+            "Font:align-center;"
         ],
-        answer: 1,
+        correctAnswer: 0,
     },
     {
         question:
             "What is the correct format for changing the background colour of a div in CSS?",
-        option: [
+        choices: [
             "Bg-color:red;",
             "bg:red;",
             "Background-colour:red;",
-            "Background-color:red;",
+            "Background-color:red;"
         ],
-        answer: 4,
-    },
-    {
-        question: "Choose the correct HTML tag for the largest heading",
-        option: ["<heading>", "<h6>", "<head>", "<h1>"],
-        answer: 4,
+        correctAnswer: 3,
     },
     {
         question: "Which is the correct CSS syntax?",
-        option: [
+        choices: [
             "Body {color: black}",
             "{body;color:black}",
             "{body:color=black(body}",
-            "body:color=black",
+            "body:color=black"
         ],
-        answer: 1,
-    },
-    {
-        question:
-            "In CSS, what is the correct option to select all the tags on a page?",
-        option: ["<p> { }", ".p { }", "#p { }", "* { }"],
-        answer: 4,
+        correctAnswer: 0,
     },
     {
         question: "Select the correct HTML tag to make a text italic?",
-        option: ["Italic", "II", "IT", "I"],
-        answer: 4,
+        choices: ["Italic", "II", "IT", "I"],
+        correctAnswer: 3,
     },
     {
         question: "Select the correct HTML tag to make a text bold.",
-        option: ["bo", "bb", "b", "bold"],
-        answer: 3,
+        choices: ["bo", "bb", "b", "bold"],
+        correctAnswer: 2,
     },
 ];
 
-//------------------------------------------------------------------------------
-let index = 0;
-let attempt = 0;
-let score = 0;
-let wrong = 0;
+var questionCounter = 0; //Tracks question number
+var selections = []; //Array containing user choices
+var quiz = $('#quiz'); //Quiz div object
 
+// Display initial question
+displayNext();
 
-let questions = quiz.sort(function(){
-  return 0.5 - Math.random();
+// Click handler for the 'next' button
+$('#next').on('click', function (e) {
+ e.preventDefault();
+
+ // Suspend click listener during fade animation
+ if(quiz.is(':animated')) {
+   return false;
+ }
+ choose();
+
+ // If no user selection, progress is stopped
+ if (isNaN(selections[questionCounter])) {
+   alert('Please make a selection!');
+ } else {
+   questionCounter++;
+   displayNext();
+ }
 });
 
-let totalQuestion = questions.length;
+// Click handler for the 'prev' button
+$('#prev').on('click', function (e) {
+ e.preventDefault();
 
-$(function () {
-  // Timer
-  let totalTime = 300; // 300 seconds for the timer
-  let minute = 0;
-  let second = 0;
-  let counter = 0;
-  let timer = setInterval(function () {
-    counter++;
-    minute = Math.floor((totalTime - counter) / 60); // calculating minutes
-    second = totalTime - minute * 60 - counter;
-
-    $(".timerBox span").text(minute + ":" + second);
-
-    if (counter == totalTime) {
-      alert("Time's Up. Press OK to get your Result");
-      result();
-      clearInterval(timer);
-    }
-  }, 1000) // timer set for 1 second interval
-
-
-  // Questions
-  printQuestion(index);
+ if(quiz.is(':animated')) {
+   return false;
+ }
+ choose();
+ questionCounter--;
+ displayNext();
 });
 
+// Click handler for the 'Start Over' button
+$('#start').on('click', function (e) {
+ e.preventDefault();
 
-// Function for Printing Questions
-function printQuestion(i) {
-  $(".questionBox").text(questions[i].question);
-  $(".optionBox span").eq(0).text(questions[i].option[0]);
-  $(".optionBox span").eq(1).text(questions[i].option[1]);
-  $(".optionBox span").eq(2).text(questions[i].option[2]);
-  $(".optionBox span").eq(3).text(questions[i].option[3]);
+ if(quiz.is(':animated')) {
+   return false;
+ }
+ questionCounter = 0;
+ selections = [];
+ displayNext();
+ $('#start').hide();
+});
+
+// Animates buttons on hover
+$('.button').on('mouseenter', function () {
+ $(this).addClass('active');
+});
+$('.button').on('mouseleave', function () {
+ $(this).removeClass('active');
+});
+
+// Creates and returns the div that contains the questions and
+// the answer selections
+function createQuestionElement(index) {
+ var qElement = $('<div>', {
+   id: 'question'
+ });
+
+ var header = $('<h2>Question ' + (index + 1) + ':</h2>');
+ qElement.append(header);
+
+ var question = $('<p>').append(questions[index].question);
+ qElement.append(question);
+
+ var radioButtons = createRadios(index);
+ qElement.append(radioButtons);
+
+ return qElement;
 }
 
-// Function to Check Answers
-function checkAnswer(option) {
-  attempt++;
-  let optionClicked = $(option).data("opt");
-  if(optionClicked == questions[index].answer) {
-    $(option).addClass("right");
-    score++;
-  } else {
-    $(option).addClass("wrong");
-    wrong++;
-  }
-
-  $(".optionBox span").attr("onclick", "");
+// Creates a list of the answer choices as radio inputs
+function createRadios(index) {
+ var radioList = $('<ul>');
+ var item;
+ var input = '';
+ for (var i = 0; i < questions[index].choices.length; i++) {
+   item = $('<li>');
+   input = '<input type="radio" name="answer" value=' + i + ' />';
+   input += questions[index].choices[i];
+   item.append(input);
+   radioList.append(item);
+ }
+ return radioList;
 }
 
-
-// Function for Next Question
-function showNext() {
-  if (index >= questions.length - 1) {
-    showResult(0);
-    return;
-  }
-  index++;
-  $(".optionBox span").removeClass();
-
-  $(".optionBox span").attr("onclick", "checkAnswer(this)");
-  printQuestion(index);
+// Reads the user selection and pushes the value to an array
+function choose() {
+ selections[questionCounter] = +$('input[name="answer"]:checked').val();
 }
 
-// Function for Prev Question
-function showPrev() {
-  if (index === 0) {
-    index = 0;
-    return;
-  }
-  index--;
-  $(".optionBox span").removeClass();
+// Displays next requested element
+function displayNext() {
+ quiz.fadeOut(function() {
+   $('#question').remove();
 
-  $(".optionBox span").attr("onclick", "checkAnswer(this)");
-  printQuestion(index);
+   if(questionCounter < questions.length){
+     var nextQuestion = createQuestionElement(questionCounter);
+     quiz.append(nextQuestion).fadeIn();
+     if (!(isNaN(selections[questionCounter]))) {
+       $('input[value='+selections[questionCounter]+']').prop('checked', true);
+     }
+
+     // Controls display of 'prev' button
+     if(questionCounter === 1){
+       $('#prev').show();
+     } else if(questionCounter === 0){
+
+       $('#prev').hide();
+       $('#next').show();
+     }
+   }else {
+     var scoreElem = displayScore();
+     quiz.append(scoreElem).fadeIn();
+     $('#next').hide();
+     $('#prev').hide();
+     $('#start').show();
+   }
+ });
 }
 
-// Function to Show result
-function showResult(j) {
-  if (j == 1 && index < questions.length - 1 && !confirm("All Questions have not been attempted. Press OK to Submit anyway")) {
-    return;
-  }
-  result();
-}
+// Computes score and returns a paragraph element to be displayed
+function displayScore() {
+ var score = $('<p>',{id: 'question'});
 
-// When Timer gets Over
-function result() {
-  $("#questionScreen").hide();
-  $("#resultScreen").show();
+ var numCorrect = 0;
+ for (var i = 0; i < selections.length; i++) {
+   if (selections[i] === questions[i].correctAnswer) {
+     numCorrect++;
+   }
+ }
 
-  $("#totalQuestion").text(totalQuestion);
-  $("#attemptQuestion").text(attempt);
-  $("#correctAnswers").text(score);
-  $("#wrongAnswers").text(wrong);
+ score.append('You got ' + numCorrect + ' questions out of ' +
+              questions.length + ' right!!!');
+ return score;
 }
+})();
